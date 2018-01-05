@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -14,32 +15,32 @@ public class ListsTest {
     @Test
     public void New() throws Exception {
         List list = Lists.New();
-        assertTrue(list != null);
+        assertEquals("Lists.New() ", list != null, true);
     }
 
     @Test
     public void isEmpty() throws Exception {
         List list = null;
-        assertTrue(Lists.IsEmpty(list));
+        assertEquals("Lists.IsEmpty()-null ", Lists.IsEmpty(list), true);
 
         list = Lists.New();
-        assertTrue(Lists.IsEmpty(list));
+        assertEquals("Lists.IsEmpty()-empty ", Lists.IsEmpty(list), true);
 
         list.add(new Object());
-        assertFalse(Lists.IsEmpty(list));
+        assertEquals("Lists.IsEmpty()-notempty ", Lists.IsEmpty(list), false);
 
     }
 
     @Test
     public void size() throws Exception {
         List list = null;
-        assertTrue(Lists.Size(list) == 0);
+        assertEquals("Lists.Size()-null ", Lists.Size(list) == 0, true);
 
         list = Lists.New();
-        assertTrue(Lists.Size(list) == 0);
+        assertEquals("Lists.Size()-empty ", Lists.Size(list) == 0, true);
 
         list.add(new Object());
-        assertTrue(Lists.Size(list) == 1);
+        assertEquals("Lists.Size()-add one ", Lists.Size(list) == 1, true);
     }
 
     @Test
