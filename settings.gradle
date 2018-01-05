@@ -1,1 +1,1 @@
-include ':ground'
+include ':ground', ':lib'
