@@ -5,6 +5,7 @@ group = 'com.github.freelifer'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
 }
 
 sourceCompatibility = "1.7"
