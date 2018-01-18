@@ -19,41 +19,41 @@ public class ListsTest {
     @Test
     public void isEmpty() throws Exception {
         List list = null;
-        assertEquals("Lists.IsEmpty()-null ", Lists.IsEmpty(list), true);
+        assertEquals("Lists.isEmpty()-null ", Lists.isEmpty(list), true);
 
         list = Lists.New();
-        assertEquals("Lists.IsEmpty()-empty ", Lists.IsEmpty(list), true);
+        assertEquals("Lists.isEmpty()-empty ", Lists.isEmpty(list), true);
 
         list.add(new Object());
-        assertEquals("Lists.IsEmpty()-notempty ", Lists.IsEmpty(list), false);
+        assertEquals("Lists.isEmpty()-notempty ", Lists.isEmpty(list), false);
 
     }
 
     @Test
     public void size() throws Exception {
         List list = null;
-        assertEquals("Lists.Size()-null ", Lists.Size(list) == 0, true);
+        assertEquals("Lists.size()-null ", Lists.size(list) == 0, true);
 
         list = Lists.New();
-        assertEquals("Lists.Size()-empty ", Lists.Size(list) == 0, true);
+        assertEquals("Lists.size()-empty ", Lists.size(list) == 0, true);
 
         list.add(new Object());
-        assertEquals("Lists.Size()-add one ", Lists.Size(list) == 1, true);
+        assertEquals("Lists.size()-add one ", Lists.size(list) == 1, true);
     }
 
     @Test
     public void each() throws Exception {
         List list = null;
-        Lists.Each(list, (list1, o) -> false);
+        Lists.each(list, (list1, o) -> false);
 
         list = Lists.New();
-        Lists.Each(list, (list1, o) -> {
+        Lists.each(list, (list1, o) -> {
             System.out.println(o);
             return false;
         });
 
         list.add(new Object());
-        Lists.Each(list, (list1, o) -> {
+        Lists.each(list, (list1, o) -> {
             System.out.println(o);
             return false;
         });

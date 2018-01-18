@@ -12,16 +12,16 @@ public class Maps {
         return new HashMap<>();
     }
 
-    public static boolean IsEmpty(Map map) {
+    public static boolean isEmpty(Map map) {
         return map == null || map.size() <= 0;
     }
 
-    public static int Size(Map map) {
+    public static int size(Map map) {
         return map == null ? 0 : map.size();
     }
 
-    public static <K, V> void Each(Map<K, V> map, MapReader<K, V> reader) {
-        if (IsEmpty(map) || reader == null) {
+    public static <K, V> void each(Map<K, V> map, MapReader<K, V> reader) {
+        if (isEmpty(map) || reader == null) {
             return;
         }
         for (Map.Entry<K, V> entry : map.entrySet()) {

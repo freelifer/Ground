@@ -5,11 +5,11 @@ package freelifer.ground.kits;
  */
 public class Empties {
 
-    public static boolean Inspect(CharSequence str) {
+    public static boolean inspect(CharSequence str) {
         return str == null || str.length() <= 0;
     }
 
-    public static boolean Inspect(Object[] objects) {
+    public static boolean inspect(Object[] objects) {
         return objects == null || objects.length <= 0;
     }
 }
